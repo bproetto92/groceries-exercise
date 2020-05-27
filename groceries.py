@@ -40,5 +40,4 @@ print("-----------------")
 
 for x in products:
     
-    print("+ "x["name"]," (",x[price],")")
-    
+    print("+ ",x["name"]," (",x["price"],")")
