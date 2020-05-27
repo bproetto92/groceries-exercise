@@ -31,10 +31,14 @@ products = [
 # TODO: write some Python code here to produce the desired output
 
 # Count the products
+print("-----------------")
 print("There are", len(products),"products")
+print("-----------------")
+
+
 #Loop through the products and print each one
 
-
 for x in products:
-    print("------")
-    print(x["name"])
+    
+    print("+ "x["name"]," (",x[price],")")
+    
