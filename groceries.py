@@ -30,14 +30,37 @@ products = [
 
 # TODO: write some Python code here to produce the desired output
 
-# Count the products
+# Step 1 - Count the products
 print("-----------------")
 print("There are", len(products),"products")
 print("-----------------")
 
+# Step 2 - Sort Products Alphabetically
 
-#Loop through the products and print each one
 
-for x in products:
-    
-    print("+ ",x["name"]," (",x["price"],")")
+def sort_by_name(p):
+    return p["name"]
+
+products2 = sorted(products, key=sort_by_name)
+
+# Step 3 - Loop through the products and print each one
+for x in products2:
+    price_usd = " (${0:.2f})".format(x["price"])
+    print("+ ",x["name"],price_usd)
+
+
+#Step 4 - Create Department List
+
+departments = []
+for x in products2:
+
+   departments.append(x["department"])
+
+unique_departments = set(departments)
+
+
+# Step 5 - Count the unique departments
+print("-----------------")
+print("There are", len(unique_departments),"departments")
+print("-----------------")
+
