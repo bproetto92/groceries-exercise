@@ -53,10 +53,11 @@ for x in products2:
 
 departments = []
 for x in products2:
+    departments.append(x["department"])
+    
 
-   departments.append(x["department"])
-
-unique_departments = set(departments)
+unique_departments = list(set(departments))
+# Set does not allow any duplicates
 
 
 # Step 5 - Count the unique departments
@@ -64,3 +65,13 @@ print("-----------------")
 print("There are", len(unique_departments),"departments")
 print("-----------------")
 
+
+# Step 6 - Loop through departments and print each one with number of products
+unique_departments.sort()
+
+
+
+for x in unique_departments:
+    matching_products = [p for p in products if p["department"] == x]
+    matching_products_count = len(matching_products)
+    print(x.title() + " (" + str(matching_products_count) + " products)")
