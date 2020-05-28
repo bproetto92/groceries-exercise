@@ -43,9 +43,19 @@ def sort_by_name(p):
 
 products2 = sorted(products, key=sort_by_name)
 
+def to_usd(my_price):
+    """
+    Converts a numeric value to usd-formatted string, for printing and display purposes.
+    Param: my_price (int or float) like 4000.444444
+    Example: to_usd(4000.444444)
+    Returns: $4,000.44
+    """
+    return f"${my_price:,.2f}" #> $12,000.71
+
+
 # Step 3 - Loop through the products and print each one
 for x in products2:
-    price_usd = " (${0:.2f})".format(x["price"])
+    price_usd = to_usd(x["price"])
     print("+ ",x["name"],price_usd)
 
 
